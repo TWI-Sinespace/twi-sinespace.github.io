@@ -3,13 +3,18 @@
   <script>
     function sinespace__Go(url)
     {
+      console.log(url);
+      console.log(document);
+      console.log(document.getElementById("frame"));
       document.getElementById("frame").src = url;
+      console.log(document.getElementById("frame"));
     }
   </script>
   <body>
     <iframe id="frame" onLoad="console.log(this.contentWindow.location);">
 
     </iframe>
+    <label>TEST 1</label>
     <button onclick="sinespace__Go('www.google.ca')">google.ca</button>
     <button onclick="sinespace__Go('www.youtube.com')">youtube.com</button>
   </body>

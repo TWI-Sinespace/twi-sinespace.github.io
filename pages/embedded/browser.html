@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <script>
+    function sinespace__Go(url)
+    {
+      document.getElementById("frame").src = url;
+    }
+  </script>
   <body>
-    <iframe>
+    <iframe id="frame" onLoad="alert(this.contentWindow.location);">
 
     </iframe>
+    <button onclick="sinespace__Go('google.ca')">google.ca</button>
+    <button onclick="sinespace__Go('youtube.com')">youtube.com</button>
   </body>
 </html>

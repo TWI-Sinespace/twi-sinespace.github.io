@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<script>
-		window.addEventListener('online', sinespace__OnConnected);
-		window.addEventListener('offline', sinespace__OnDisconnected);
+		function onConnected()
+		{
+			document.getElementById("status").innerHTML = "Status: Connected";
+			if (window.sinespace__OnConnected) sinespace__OnConnected();
+		}
+		function onDisconnected()
+		{
+			document.getElementById("status").innerHTML = "Status: Disconnected";
+			if (window.sinespace__OnDisconnected) sinespace__OnDisconnected();
+		}
+		
+		window.addEventListener('online', onConnected);
+		window.addEventListener('offline', onDisconnected);
 	</script>
+	<body>
+		<div id="status">Status: Connected</div>
+	</body>
 </html>
